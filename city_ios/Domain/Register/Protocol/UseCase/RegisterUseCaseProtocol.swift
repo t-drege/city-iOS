@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Combine
 
 protocol RegisterUseCaseProtocol {
-    func execute(_ request: RegisterRequest) async -> Result<Bool, Error>
+    func execute(_ request: RegisterRequest) -> AnyPublisher<RegisterResponse, NetworkError>
 }

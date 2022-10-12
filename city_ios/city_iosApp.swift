@@ -13,8 +13,8 @@ struct city_iosApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            RegisterView(registerViewModel: RegisterViewModel(registerUC: RegisterUseCase()))
+                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

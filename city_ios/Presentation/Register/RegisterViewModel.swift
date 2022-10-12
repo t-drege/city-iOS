@@ -6,24 +6,27 @@
 //
 
 import Foundation
+import Combine
 
 class RegisterViewModel: ObservableObject {
-    private let UC : RegisterUseCaseProtocol
     
-    init(register: RegisterUseCaseProtocol) {
-        self.UC = register
+    @Published var errorMessage: String?
+    @Published var registerResponse: RegisterResponse?
+    
+    private let registerUC : RegisterUseCaseProtocol
+    private var cancellableSet: Set<AnyCancellable> = []
+    
+    init(registerUC: RegisterUseCaseProtocol = RegisterUseCase.shared) {
+        self.registerUC = registerUC
+    }
+
+    func registerAction() {
+        self.registerUC.execute(RegisterRequest())
+            .sink(receiveCompletion: { error in
+                print(error)
+            }, receiveValue: {
+                self.registerResponse = $0
+            }).store(in: &cancellableSet)
     }
     
-    @Published var errorMessage = ""
-    //@Published var contacts : [ContactResponseModel] = []
-    
-    func test() async {
-        let result = await self.UC.execute(RegisterRequest())
-        switch result {
-        case .success(_):
-            self.errorMessage = "o"
-        case .failure(_):
-            self.errorMessage = "o"
-        }
-    }
 }

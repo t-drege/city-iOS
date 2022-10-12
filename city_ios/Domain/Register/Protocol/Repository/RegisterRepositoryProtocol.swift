@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Combine
 
 protocol RegisterRepositoryProtocol {
-   //func createNewPlayer() async -> Result<[ContactResponseModel], ContactError>
+   func createNewPlayer() -> AnyPublisher<RegisterResponse, NetworkError>
 }

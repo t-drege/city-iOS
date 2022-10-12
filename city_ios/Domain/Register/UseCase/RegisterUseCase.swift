@@ -6,10 +6,21 @@
 //
 
 import Foundation
+import Combine
 
-class RegisterUseCase: RegisterUseCaseProtocol {
-    func execute(_ request: RegisterRequest) async -> Result<Bool, Error> {
-        <#code#>
+struct RegisterUseCase {
+    static let shared: RegisterUseCaseProtocol = RegisterUseCase()
+    
+    let repository: RegisterRepositoryProtocol
+    
+    init(repository: RegisterRepositoryProtocol = RegisterRepository.shared) {
+        self.repository = repository
+    }
+}
+
+extension RegisterUseCase: RegisterUseCaseProtocol {
+    func execute(_ request: RegisterRequest) -> AnyPublisher<RegisterResponse, NetworkError> {
+        return self.repository.createNewPlayer()
     }
     
 }

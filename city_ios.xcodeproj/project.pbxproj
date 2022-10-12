@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		450ED9072D13D11960B24474 /* Pods_city_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4ACDF6720D645EA99453FB /* Pods_city_iosTests.framework */; };
 		AD7F62784EAFEAC2BCC6DFDD /* Pods_city_ios_city_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF309027685A1F8DAFF39B29 /* Pods_city_ios_city_iosUITests.framework */; };
+		BD2DD77D28F443310055EB5A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DD77C28F443310055EB5A /* NetworkError.swift */; };
+		BD2E978028F3FF3D00EE6E39 /* RegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E977F28F3FF3D00EE6E39 /* RegisterRepository.swift */; };
 		BD407BBC28F2DD000075C419 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD407BBB28F2DD000075C419 /* RegisterView.swift */; };
 		BD407BBE28F2DD2B0075C419 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD407BBD28F2DD2B0075C419 /* RegisterViewModel.swift */; };
 		BD407BC828F2E3DB0075C419 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD407BC728F2E3DB0075C419 /* RegisterRouter.swift */; };
@@ -67,6 +69,8 @@
 		33EB0270A77CA0E3511CADC3 /* Pods-city_ios-city_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-city_ios-city_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-city_ios-city_iosUITests/Pods-city_ios-city_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		482A83FEAEA0EFADC9C6B355 /* Pods-city_ios-city_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-city_ios-city_iosUITests.release.xcconfig"; path = "Target Support Files/Pods-city_ios-city_iosUITests/Pods-city_ios-city_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A83275A5BC81C07873D0FB16 /* Pods-city_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-city_ios.debug.xcconfig"; path = "Target Support Files/Pods-city_ios/Pods-city_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		BD2DD77C28F443310055EB5A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		BD2E977F28F3FF3D00EE6E39 /* RegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRepository.swift; sourceTree = "<group>"; };
 		BD407BBB28F2DD000075C419 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		BD407BBD28F2DD2B0075C419 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		BD407BC728F2E3DB0075C419 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
@@ -151,6 +155,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BD2DD77B28F443200055EB5A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BD2DD77C28F443310055EB5A /* NetworkError.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		BD407BB628F2DC9C0075C419 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +242,7 @@
 		BD407BC328F2E0B60075C419 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				BD2E977F28F3FF3D00EE6E39 /* RegisterRepository.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -245,6 +258,7 @@
 		BD407BC528F2E10E0075C419 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				BD2DD77B28F443200055EB5A /* Config */,
 				BD407BC628F2E36F0075C419 /* Router */,
 			);
 			path = Network;
@@ -588,10 +602,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCCC2B628F21C3900F79D1F /* city_iosApp.swift in Sources */,
+				BD2DD77D28F443310055EB5A /* NetworkError.swift in Sources */,
 				BD407BD328F35DF30075C419 /* RegisterRequest.swift in Sources */,
 				BD407BBE28F2DD2B0075C419 /* RegisterViewModel.swift in Sources */,
 				BD407BBC28F2DD000075C419 /* RegisterView.swift in Sources */,
 				BD407BD128F35DE70075C419 /* RegisterResponse.swift in Sources */,
+				BD2E978028F3FF3D00EE6E39 /* RegisterRepository.swift in Sources */,
 				BDCCC2BB28F21C3900F79D1F /* city_ios.xcdatamodeld in Sources */,
 				BD407BD528F35E330075C419 /* RegisterUseCase.swift in Sources */,
 				BDCCC2BD28F21C3900F79D1F /* ContentView.swift in Sources */,
@@ -685,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -739,7 +755,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -762,6 +778,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = City;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -803,6 +820,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = City;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
