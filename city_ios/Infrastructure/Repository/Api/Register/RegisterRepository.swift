@@ -16,7 +16,7 @@ struct RegisterRepository {
 
 extension RegisterRepository: RegisterRepositoryProtocol {
     func createNewPlayer() -> AnyPublisher<RegisterResponse, NetworkError> {
-        return AF.request("http://127.0.0.1:8000/api/players/38")
+        return AF.request("http://127.0.0.1:8000/api/players/38", method: .post, headers: <#T##HTTPHeaders?#>)
             .validate()
             .publishDecodable(type: RegisterResponse.self)
             .value()

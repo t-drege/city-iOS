@@ -9,11 +9,11 @@ import Foundation
 
 struct RegisterResponse: Decodable, Identifiable {
     
-    var id : Int?
-    var firstname: String?
-    var lastname: String?
-    var email: String?
-    var password: String?
+    var id : Int
+    var firstname: String
+    var lastname: String
+    var email: String
+    var password: String
     
     private enum CodingKeys: String, CodingKey {
        case id = "id"

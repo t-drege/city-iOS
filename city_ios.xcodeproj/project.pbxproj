@@ -28,6 +28,14 @@
 		BDCCC2CD28F21C3B00F79D1F /* city_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCC2CC28F21C3B00F79D1F /* city_iosTests.swift */; };
 		BDCCC2D728F21C3B00F79D1F /* city_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCC2D628F21C3B00F79D1F /* city_iosUITests.swift */; };
 		BDCCC2D928F21C3B00F79D1F /* city_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCC2D828F21C3B00F79D1F /* city_iosUITestsLaunchTests.swift */; };
+		BDD245A328F6DCC300C4DDD1 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245A228F6DCC300C4DDD1 /* Api.swift */; };
+		BDD245A928F6E1C800C4DDD1 /* TokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245A828F6E1C800C4DDD1 /* TokenRepository.swift */; };
+		BDD245B128F6E8B600C4DDD1 /* UpdateTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245B028F6E8B600C4DDD1 /* UpdateTokenResponse.swift */; };
+		BDD245B328F6E8C100C4DDD1 /* UpdateTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245B228F6E8C100C4DDD1 /* UpdateTokenRequest.swift */; };
+		BDD245B528F6E8CE00C4DDD1 /* UpdateTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245B428F6E8CE00C4DDD1 /* UpdateTokenUseCase.swift */; };
+		BDD245B928F6E94C00C4DDD1 /* UpdateTokenRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245B828F6E94C00C4DDD1 /* UpdateTokenRepositoryProtocol.swift */; };
+		BDD245BB28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245BA28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift */; };
+		BDD245BE28F6E99200C4DDD1 /* UpdateTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245BD28F6E99200C4DDD1 /* UpdateTokenRepository.swift */; };
 		BDD900A728F3655E0077E971 /* Pods_city_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD900A628F3655E0077E971 /* Pods_city_ios.framework */; };
 		BDD900A828F3655E0077E971 /* Pods_city_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDD900A628F3655E0077E971 /* Pods_city_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -92,6 +100,14 @@
 		BDCCC2D228F21C3B00F79D1F /* city_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = city_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCCC2D628F21C3B00F79D1F /* city_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = city_iosUITests.swift; sourceTree = "<group>"; };
 		BDCCC2D828F21C3B00F79D1F /* city_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = city_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BDD245A228F6DCC300C4DDD1 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		BDD245A828F6E1C800C4DDD1 /* TokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRepository.swift; sourceTree = "<group>"; };
+		BDD245B028F6E8B600C4DDD1 /* UpdateTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenResponse.swift; sourceTree = "<group>"; };
+		BDD245B228F6E8C100C4DDD1 /* UpdateTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenRequest.swift; sourceTree = "<group>"; };
+		BDD245B428F6E8CE00C4DDD1 /* UpdateTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenUseCase.swift; sourceTree = "<group>"; };
+		BDD245B828F6E94C00C4DDD1 /* UpdateTokenRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenRepositoryProtocol.swift; sourceTree = "<group>"; };
+		BDD245BA28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenUseCaseProtocol.swift; sourceTree = "<group>"; };
+		BDD245BD28F6E99200C4DDD1 /* UpdateTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenRepository.swift; sourceTree = "<group>"; };
 		BDD900A628F3655E0077E971 /* Pods_city_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_city_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF6F88B28F3645F00550DB9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFEF54B28F364CE00FAE20C /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				BD2DD77C28F443310055EB5A /* NetworkError.swift */,
+				BDD245A228F6DCC300C4DDD1 /* Api.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -174,6 +191,7 @@
 		BD407BB728F2DCA90075C419 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				BDD245AA28F6E32700C4DDD1 /* Shared */,
 				BD407BBF28F2DD6A0075C419 /* Register */,
 			);
 			path = Domain;
@@ -182,6 +200,7 @@
 		BD407BB828F2DCBC0075C419 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				BD407BC528F2E10E0075C419 /* Network */,
 				BD407BC228F2E0A80075C419 /* Repository */,
 			);
 			path = Infrastructure;
@@ -190,7 +209,6 @@
 		BD407BB928F2DCD70075C419 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				BD407BC528F2E10E0075C419 /* Network */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -234,7 +252,9 @@
 		BD407BC228F2E0A80075C419 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				BD407BC328F2E0B60075C419 /* Register */,
+				BDD245A628F6DEB200C4DDD1 /* Local */,
+				BDD245A528F6DEAB00C4DDD1 /* Session */,
+				BDD245A428F6DE9000C4DDD1 /* Api */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -360,6 +380,106 @@
 				BDCCC2D828F21C3B00F79D1F /* city_iosUITestsLaunchTests.swift */,
 			);
 			path = city_iosUITests;
+			sourceTree = "<group>";
+		};
+		BDD245A428F6DE9000C4DDD1 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				BD407BC328F2E0B60075C419 /* Register */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		BDD245A528F6DEAB00C4DDD1 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245BC28F6E97600C4DDD1 /* Token */,
+				BDD245A828F6E1C800C4DDD1 /* TokenRepository.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		BDD245A628F6DEB200C4DDD1 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		BDD245AA28F6E32700C4DDD1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245AB28F6E46F00C4DDD1 /* Token */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		BDD245AB28F6E46F00C4DDD1 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245AF28F6E82600C4DDD1 /* Response */,
+				BDD245AE28F6E82000C4DDD1 /* Request */,
+				BDD245AD28F6E81800C4DDD1 /* UseCase */,
+				BDD245AC28F6E81000C4DDD1 /* Protocol */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		BDD245AC28F6E81000C4DDD1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245B728F6E92700C4DDD1 /* Repository */,
+				BDD245B628F6E8D900C4DDD1 /* UseCase */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BDD245AD28F6E81800C4DDD1 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245B428F6E8CE00C4DDD1 /* UpdateTokenUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		BDD245AE28F6E82000C4DDD1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245B228F6E8C100C4DDD1 /* UpdateTokenRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BDD245AF28F6E82600C4DDD1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245B028F6E8B600C4DDD1 /* UpdateTokenResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		BDD245B628F6E8D900C4DDD1 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245BA28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		BDD245B728F6E92700C4DDD1 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245B828F6E94C00C4DDD1 /* UpdateTokenRepositoryProtocol.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		BDD245BC28F6E97600C4DDD1 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				BDD245BD28F6E99200C4DDD1 /* UpdateTokenRepository.swift */,
+			);
+			path = Token;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,18 +722,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCCC2B628F21C3900F79D1F /* city_iosApp.swift in Sources */,
+				BDD245A928F6E1C800C4DDD1 /* TokenRepository.swift in Sources */,
 				BD2DD77D28F443310055EB5A /* NetworkError.swift in Sources */,
+				BDD245BB28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift in Sources */,
 				BD407BD328F35DF30075C419 /* RegisterRequest.swift in Sources */,
+				BDD245A328F6DCC300C4DDD1 /* Api.swift in Sources */,
 				BD407BBE28F2DD2B0075C419 /* RegisterViewModel.swift in Sources */,
 				BD407BBC28F2DD000075C419 /* RegisterView.swift in Sources */,
 				BD407BD128F35DE70075C419 /* RegisterResponse.swift in Sources */,
 				BD2E978028F3FF3D00EE6E39 /* RegisterRepository.swift in Sources */,
 				BDCCC2BB28F21C3900F79D1F /* city_ios.xcdatamodeld in Sources */,
+				BDD245B128F6E8B600C4DDD1 /* UpdateTokenResponse.swift in Sources */,
 				BD407BD528F35E330075C419 /* RegisterUseCase.swift in Sources */,
 				BDCCC2BD28F21C3900F79D1F /* ContentView.swift in Sources */,
+				BDD245BE28F6E99200C4DDD1 /* UpdateTokenRepository.swift in Sources */,
 				BD407BC828F2E3DB0075C419 /* RegisterRouter.swift in Sources */,
 				BD407BCF28F2E68D0075C419 /* RegisterUseCaseProtocol.swift in Sources */,
 				BDCCC2B828F21C3900F79D1F /* Persistence.swift in Sources */,
+				BDD245B928F6E94C00C4DDD1 /* UpdateTokenRepositoryProtocol.swift in Sources */,
+				BDD245B528F6E8CE00C4DDD1 /* UpdateTokenUseCase.swift in Sources */,
+				BDD245B328F6E8C100C4DDD1 /* UpdateTokenRequest.swift in Sources */,
 				BD407BCB28F2E5250075C419 /* RegisterRepositoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
