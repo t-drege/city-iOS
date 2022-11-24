@@ -12,13 +12,13 @@ struct CTextField: View {
     @Binding var bindingText: String
     
     @State var isSelected: Bool = false
-    @State var validator: Bool = true
     @State var color: Color = Colors.greyCloud
-    
-    let sizeLine: CGFloat = 2.0
+    @State var validator: () -> Bool
     
     var placeholder: String
     var type: UIKeyboardType = .default
+    
+    private let sizeLine: CGFloat = 2.0
 
     var body: some View {
         VStack {
@@ -26,7 +26,6 @@ struct CTextField: View {
                 TextField(placeholder , text: $bindingText, onEditingChanged: { isChanging in
                     foregroundColor(isChanging)
                 }, onCommit: {
-                    print(validator)
                     isTextValided()
                 })
                 .keyboardType(type)
@@ -43,13 +42,13 @@ struct CTextField: View {
             color = Color.gray
         }
         
-        if(isChanging && validator == true) {
+        if(isChanging == false && validator() == true) {
             color = Colors.greyCloud
         }
     }
     
     func isTextValided()  {
-        if validator == false {
+        if validator() == false {
             color = Color.red
         }
     }
@@ -58,7 +57,7 @@ struct CTextField: View {
 
 struct CTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CTextField(bindingText: Binding<String>.constant("") ,isSelected: false, placeholder: "Text")
+        CTextField(bindingText: Binding<String>.constant("") ,isSelected: false, validator: testValidator(CTextField_Previews()), placeholder: "Text")
     }
     
     func testValidator() -> Bool {

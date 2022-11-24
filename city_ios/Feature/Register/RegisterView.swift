@@ -18,7 +18,7 @@ struct RegisterView: View {
         NavigationView {
             VStack(alignment: .center) {
                 VStack {
-                    CTextField(bindingText: $firstname, validator: validate(text: $firstname), placeholder: Localized.Register.Form.firstname
+                    CTextField(bindingText: $firstname, validator: {validate(text: $firstname)}, placeholder: Localized.Register.Form.firstname
                     )
                 }
                 .padding(20)
