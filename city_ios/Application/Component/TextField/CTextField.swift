@@ -13,7 +13,7 @@ struct CTextField: View {
     
     @State var isSelected: Bool = false
     @State var color: Color = Colors.greyCloud
-    @State var validator: () -> Bool
+    @State var validator: () -> Bool = {true}
     
     var placeholder: String
     var type: UIKeyboardType = .default
