@@ -1,0 +1,24 @@
+strings:
+  inputs: city_ios/Application/Resources/en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: city_ios/Infrastructure/SwiftGen/Localized+Generated.swift
+      params:
+        enumName: Localized
+xcassets:
+- inputs:
+    - city_ios/Application/Resources/Images.xcassets
+  outputs:
+    templatePath: swiftgen-templates/assets_swift5_swiftui.stencil
+    output: city_ios/Infrastructure/SwiftGen/Images+Generated.swift
+    params:
+      enumName: Images
+      forceProvidesNamespaces: true
+- inputs:
+    - city_ios/Application/Resources/Colors.xcassets
+  outputs:
+    templatePath: swiftgen-templates/assets_swift5_swiftui.stencil
+    output: city_ios/Infrastructure/SwiftGen/Colors+Generated.swift
+    params:
+      enumName: Colors
+      forceProvidesNamespaces: true

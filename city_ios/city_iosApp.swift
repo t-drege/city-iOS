@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct city_iosApp: App {
-    let persistenceController = PersistenceController.shared
-
+    private let manager = DependencyManager()
+    
     var body: some Scene {
         WindowGroup {
-            RegisterView(registerViewModel: RegisterViewModel(registerUC: RegisterUseCase()))
-                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
+           MainView()
         }
     }
 }

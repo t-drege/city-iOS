@@ -9,19 +9,15 @@ import Foundation
 import Combine
 
 class RegisterViewModel: ObservableObject {
+    @Inject var registerRepository: RegisterRepositoryProtocol
     
     @Published var errorMessage: String?
     @Published var registerResponse: RegisterResponse?
     
-    private let registerUC : RegisterUseCaseProtocol
     private var cancellableSet: Set<AnyCancellable> = []
-    
-    init(registerUC: RegisterUseCaseProtocol = RegisterUseCase.shared) {
-        self.registerUC = registerUC
-    }
 
     func registerAction() {
-        self.registerUC.execute(RegisterRequest())
+        self.registerRepository.createNewPlayer()
             .sink(receiveCompletion: { error in
                 print(error)
             }, receiveValue: {

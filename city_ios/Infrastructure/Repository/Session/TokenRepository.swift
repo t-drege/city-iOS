@@ -14,10 +14,10 @@ protocol TokenRepositoryProtocol {
 
 struct TokenRepository: TokenRepositoryProtocol {
     func setUserToken(token: String) {
-        <#code#>
+        //
     }
     
     func getUserToken(token: String) {
-        <#code#>
+        //
     }
 }

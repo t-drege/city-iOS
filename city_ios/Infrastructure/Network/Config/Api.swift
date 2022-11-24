@@ -8,6 +8,6 @@
 import Foundation
 
 struct Api {
-    var headers = ["Authorization": "Bearer\()"]
+    var headers = ["Authorization": "Bearer\("")"]
     
 }

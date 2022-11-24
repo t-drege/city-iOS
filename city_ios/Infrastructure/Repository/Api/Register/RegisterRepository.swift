@@ -9,14 +9,9 @@ import Foundation
 import Alamofire
 import Combine
 
-struct RegisterRepository {
-    static let shared: RegisterRepositoryProtocol = RegisterRepository()
-    private init() {}
-}
-
-extension RegisterRepository: RegisterRepositoryProtocol {
+struct RegisterRepository: RegisterRepositoryProtocol {
     func createNewPlayer() -> AnyPublisher<RegisterResponse, NetworkError> {
-        return AF.request("http://127.0.0.1:8000/api/players/38", method: .post, headers: <#T##HTTPHeaders?#>)
+        return AF.request("http://127.0.0.1:8000/api/players/38", method: .get)
             .validate()
             .publishDecodable(type: RegisterResponse.self)
             .value()
