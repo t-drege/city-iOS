@@ -6,6 +6,7 @@ target 'city_ios' do
   use_frameworks!
   # Pods for city_ios
   pod 'Alamofire', '5.6.2'
+  pod 'SFSafeSymbols', '~> 4.0.0'
   
   target 'city_iosTests' do
     inherit! :search_paths

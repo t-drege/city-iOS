@@ -17,6 +17,8 @@
 		BD08842A2900017D00FB6D74 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0884292900017D00FB6D74 /* Colors.xcassets */; };
 		BD08842B2900022A00FB6D74 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD08842D2900022A00FB6D74 /* Localizable.strings */; };
 		BD0884302900027500FB6D74 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD0884322900027500FB6D74 /* Localizable.strings */; };
+		BD2A3ED82930B34300B7EA24 /* CTextFieldEmptyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2A3ED72930B34300B7EA24 /* CTextFieldEmptyError.swift */; };
+		BD2A3EDA2930F15500B7EA24 /* ErrorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2A3ED92930F15500B7EA24 /* ErrorText.swift */; };
 		BD2DD77D28F443310055EB5A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2DD77C28F443310055EB5A /* NetworkError.swift */; };
 		BD2E978028F3FF3D00EE6E39 /* RegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E977F28F3FF3D00EE6E39 /* RegisterRepository.swift */; };
 		BD3C168E28F6F5630032CE1F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3C168D28F6F5630032CE1F /* LoginView.swift */; };
@@ -85,6 +87,8 @@
 		BD0884292900017D00FB6D74 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BD08842C2900022A00FB6D74 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BD0884312900027500FB6D74 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BD2A3ED72930B34300B7EA24 /* CTextFieldEmptyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTextFieldEmptyError.swift; sourceTree = "<group>"; };
+		BD2A3ED92930F15500B7EA24 /* ErrorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
 		BD2DD77C28F443310055EB5A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		BD2E977F28F3FF3D00EE6E39 /* RegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRepository.swift; sourceTree = "<group>"; };
 		BD3C168D28F6F5630032CE1F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 		BD084EA3292FB8D100D735B6 /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				BD2A3ED72930B34300B7EA24 /* CTextFieldEmptyError.swift */,
+				BD2A3ED92930F15500B7EA24 /* ErrorText.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -835,9 +841,11 @@
 				BD407BD328F35DF30075C419 /* RegisterRequest.swift in Sources */,
 				BDD245A328F6DCC300C4DDD1 /* Api.swift in Sources */,
 				BD08841B28FFFCFE00FB6D74 /* CTextField.swift in Sources */,
+				BD2A3EDA2930F15500B7EA24 /* ErrorText.swift in Sources */,
 				BD407BBE28F2DD2B0075C419 /* RegisterViewModel.swift in Sources */,
 				BD407BBC28F2DD000075C419 /* RegisterView.swift in Sources */,
 				BD407BD128F35DE70075C419 /* RegisterResponse.swift in Sources */,
+				BD2A3ED82930B34300B7EA24 /* CTextFieldEmptyError.swift in Sources */,
 				BD2E978028F3FF3D00EE6E39 /* RegisterRepository.swift in Sources */,
 				BD0884242900012200FB6D74 /* Colors+Generated.swift in Sources */,
 				BDCCC2BB28F21C3900F79D1F /* city_ios.xcdatamodeld in Sources */,

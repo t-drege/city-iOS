@@ -14,7 +14,7 @@ import SwiftUI
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Colors {
-  internal static let greyCloud = Color("grey-cloud")
+  internal static let greyLightgray = Color("grey-lightgray")
   internal static let main = Color("main")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct RegisterView: View {
     
@@ -18,20 +19,20 @@ struct RegisterView: View {
         NavigationView {
             VStack(alignment: .center) {
                 VStack {
-                    CTextField(bindingText: $firstname, validator: {validate(text: $firstname)}, placeholder: Localized.Register.Form.firstname
+                    CTextField(
+                        bindingText: $firstname,
+                        validators: [
+                            CTextFieldEmptyError.execute(text: $firstname),
+                            CTextFieldEmptyError.execute(text: $firstname)
+                        ],
+                        placeholder: Localized.Register.Form.firstname,
+                        image: Image(systemSymbol: .personFill)
                     )
                 }
                 .padding(20)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         }
-    }
-    
-    func validate(text: Binding<String>) -> Bool {
-        if(text.wrappedValue == "") {
-            return false
-        }
-        return true
     }
     
 }

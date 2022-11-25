@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.6.2)
+  - SFSafeSymbols (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (= 5.6.2)
+  - SFSafeSymbols (~> 4.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SFSafeSymbols
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  SFSafeSymbols: 38b8031609bf2e36e905ab3a1820d7418f3ac56d
 
-PODFILE CHECKSUM: a299d52623daba8de64c35f1835440b2b461c09a
+PODFILE CHECKSUM: 3ec3ee9b6d12918642948696e937202056a0745b
 
 COCOAPODS: 1.11.3

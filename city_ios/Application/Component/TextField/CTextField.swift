@@ -8,48 +8,92 @@
 import SwiftUI
 
 struct CTextField: View {
-    
     @Binding var bindingText: String
     
     @State var isSelected: Bool = false
-    @State var color: Color = Colors.greyCloud
-    @State var validator: () -> Bool = {true}
+    @State var color: Color = Colors.greyLightgray
+    @State var validators: [() -> (Bool, String?)]? = []
+    @State var isCommit: Bool = false
     
-    var placeholder: String
-    var type: UIKeyboardType = .default
+    let placeholder: String
+    let type: UIKeyboardType = .default
     
-    private let sizeLine: CGFloat = 2.0
+    var image: Image? = nil
 
+    private let sizeLine: CGFloat = 2.0
+    
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
-                TextField(placeholder , text: $bindingText, onEditingChanged: { isChanging in
-                    foregroundColor(isChanging)
-                }, onCommit: {
-                    isTextValided()
-                })
-                .keyboardType(type)
+                getImage()
+                getTextField()
             }
-            
-            Rectangle()
-                .frame(height: sizeLine, alignment: .bottom)
-                .foregroundColor(color)
+            getLine()
+            DisplayTextErrors()
         }
+    }
+    
+    @ViewBuilder func getImage() -> some View {
+        if let image = image {
+            image.foregroundColor(color)
+        }
+    }
+    
+    @ViewBuilder func getTextField() -> some View {
+        TextField(placeholder , text: $bindingText, onEditingChanged: { isChanging in
+            foregroundColor(isChanging)
+        }, onCommit: {
+            isValidated()
+        })
+        .keyboardType(type)
+    }
+    
+    @ViewBuilder func getLine() -> some View {
+        Rectangle()
+            .frame(height: sizeLine, alignment: .bottom)
+            .foregroundColor(color)
+    }
+    
+    @ViewBuilder func DisplayTextErrors() -> some View {
+        ForEach(getTextErrors()) { errorText in
+            Text(errorText.text).foregroundColor(.red)
+        }
+    }
+    
+    func getTextErrors() -> [ErrorText] {
+        var textErrors: [ErrorText] = []
+        if let validators = validators, isCommit {
+            validators.forEach { validator in
+                if validator().0 == false, let textError = validator().1 {
+                    textErrors.append(ErrorText(text: textError))
+                }
+            }
+        }
+        return textErrors
     }
     
     func foregroundColor(_ isChanging: Bool) {
         if(isChanging) {
-            color = Color.gray
+            isCommit = false
+            color = Colors.main
         }
-        
-        if(isChanging == false && validator() == true) {
-            color = Colors.greyCloud
+
+        if(isChanging == false && isCommit == false) {
+            isCommit = false
+            color = Colors.greyLightgray
         }
     }
     
-    func isTextValided()  {
-        if validator() == false {
-            color = Color.red
+    func isValidated()  {
+        guard let validators = validators else {
+            return
+        }
+        
+        validators.forEach { validator in
+            if validator().0 == false {
+                isCommit = true
+                color = Color.red
+            }
         }
     }
     
@@ -57,11 +101,6 @@ struct CTextField: View {
 
 struct CTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CTextField(bindingText: Binding<String>.constant("") ,isSelected: false, validator: testValidator(CTextField_Previews()), placeholder: "Text")
+        CTextField(bindingText: Binding<String>.constant("") ,isSelected: false, validators: {nil}(), placeholder: "Text", image: Image(systemSymbol: .personFill))
     }
-    
-    func testValidator() -> Bool {
-        return true
-    }
-
 }
