@@ -12,7 +12,7 @@ struct CTextField: View {
     
     @State var isSelected: Bool = false
     @State var color: Color = Colors.greyLightgray
-    @State var validators: [() -> (Bool, String?)]? = []
+    @State var validators: () -> [(Bool, String?)] = {[]}
     @State var isCommit: Bool = false
     
     let placeholder: String
@@ -62,9 +62,9 @@ struct CTextField: View {
     
     func getTextErrors() -> [ErrorText] {
         var textErrors: [ErrorText] = []
-        if let validators = validators, isCommit {
-            validators.forEach { validator in
-                if validator().0 == false, let textError = validator().1 {
+        if isCommit {
+            validators().forEach { validator in
+                if validator.0 == false, let textError = validator.1 {
                     textErrors.append(ErrorText(text: textError))
                 }
             }
@@ -85,12 +85,8 @@ struct CTextField: View {
     }
     
     func isValidated()  {
-        guard let validators = validators else {
-            return
-        }
-        
-        validators.forEach { validator in
-            if validator().0 == false {
+        validators().forEach { validator in
+            if validator.0 == false {
                 isCommit = true
                 color = Color.red
             }
@@ -101,6 +97,6 @@ struct CTextField: View {
 
 struct CTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CTextField(bindingText: Binding<String>.constant("") ,isSelected: false, validators: {nil}(), placeholder: "Text", image: Image(systemSymbol: .personFill))
+        CTextField(bindingText: Binding<String>.constant("") ,isSelected: false, validators: {[]}, placeholder: "Text", image: Image(systemSymbol: .personFill))
     }
 }

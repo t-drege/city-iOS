@@ -9,13 +9,11 @@ import Foundation
 import SwiftUI
 
 struct CTextFieldEmptyError {
-    static func execute(text: Binding<String>) -> (() -> (Bool, String?)) {
-        return {
-            if(text.wrappedValue.isEmpty) {
-                return (false, "Ce champs ne doit pas être vide.")
-            }
-            return (true, nil)
+    static func execute(text: Binding<String>) -> (Bool, String?) {
+        if(text.wrappedValue.isEmpty) {
+            return (false, "Ce champs ne doit pas être vide.")
         }
+        return (true, nil)
     }
     
 }
