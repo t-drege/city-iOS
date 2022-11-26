@@ -28,6 +28,8 @@ struct RegisterView: View {
                         placeholder: Localized.Register.Form.firstname,
                         image: Image(systemSymbol: .personFill)
                     )
+                    
+                    CButtonReverse(buttonText: "Envoyer", action: ())
                 }
                 .padding(20)
             }

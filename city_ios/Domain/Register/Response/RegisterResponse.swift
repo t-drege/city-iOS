@@ -7,28 +7,21 @@
 
 import Foundation
 
-struct RegisterResponse: Decodable, Identifiable {
+struct RegisterResponse: Decodable {
+    let firstname: String
+    let test: String
     
-    var id : Int
-    var firstname: String
-    var lastname: String
-    var email: String
-    var password: String
-    
-    private enum CodingKeys: String, CodingKey {
-       case id = "id"
-       case firstname = "firstname"
-       case lastname = "lastname"
-       case password = "password"
-       case email = "email"
-   }
-    
-    func decode(to decoder: Decoder) throws
-    {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        try container.decodeIfPresent(Int.self, forKey: .id)
-        try container.decodeIfPresent(String.self, forKey: .firstname)
-        try container.decodeIfPresent(String.self, forKey: .lastname)
+    enum CodingKeys: String, CodingKey {
+        case test = "test"
     }
+    
+    init(from decoder: Decoder) throws {
+        let player = try Player(from: decoder)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.test = try container.decode(String.self, forKey: .test)
+        firstname = player.firstname
+    }
+    
 
 }

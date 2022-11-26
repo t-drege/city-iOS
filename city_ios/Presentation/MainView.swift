@@ -19,7 +19,7 @@ struct MainView: View {
 //        } else {
 //            RegisterView()
 //        }
-        RegisterView()
+       TeamView()
     }
 }
 

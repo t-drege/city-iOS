@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct RegisterRequest {
+struct RegisterRequest: Encodable {
     
 }

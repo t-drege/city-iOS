@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct CButton: View {
+struct CButtonReverse: View {
+    @State var opacity: CGFloat = 1.0
     
     let buttonText: String
     let action : Void
@@ -19,6 +20,7 @@ struct CButton: View {
             Text(buttonText.uppercased())
                 .fontWeight(.bold)
                 .font(.system(size: 20))
+                .opacity(opacity)
                 .padding(10)
                 .foregroundColor(Colors.main)
                 .frame(maxWidth: .infinity)
@@ -26,12 +28,19 @@ struct CButton: View {
                     Rectangle()
                         .stroke(Colors.main, lineWidth: 2)
                 )
-        }
+        }.highPriorityGesture(
+            DragGesture(minimumDistance: 0)
+            .onChanged{ _ in
+                opacity = 0.5
+            }.onEnded{ _ in
+                opacity =  1
+            }
+        )
     }
 }
 
 struct CButton_Previews: PreviewProvider {
     static var previews: some View {
-        CButton(buttonText: "Valider",action: ())
+        CButtonReverse(buttonText: "Valider",action: ())
     }
 }

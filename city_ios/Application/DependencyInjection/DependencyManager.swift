@@ -14,6 +14,7 @@ final class DependencyManager {
     
     private func addDependencies() {
         Resolver.register(RegisterRepository() as RegisterRepositoryProtocol)
+        Resolver.register(PlayerListRepository() as playerListRepositoryProtocol)
     }
     
 }
