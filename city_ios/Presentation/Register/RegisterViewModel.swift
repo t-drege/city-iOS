@@ -20,8 +20,8 @@ class RegisterViewModel: ObservableObject {
         self.registerRepository.createNewPlayer()
             .sink(receiveCompletion: { error in
                 print(error)
-            }, receiveValue: {
-                self.registerResponse = $0
+            }, receiveValue: { response in
+                self.registerResponse = response
             }).store(in: &cancellableSet)
     }
     

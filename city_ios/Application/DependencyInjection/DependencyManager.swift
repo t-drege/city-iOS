@@ -8,7 +8,8 @@
 import Foundation
 
 final class DependencyManager {
-    init() {
+    
+    func injectDependencies() {
         addDependencies()
     }
     

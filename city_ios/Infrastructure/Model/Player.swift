@@ -22,8 +22,7 @@ struct Player: Identifiable, Codable {
        case email = "email"
    }
     
-    func decode(to decoder: Decoder) throws
-    {
+    func decode(to decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         try container.decodeIfPresent(Int.self, forKey: .id)
         try container.decodeIfPresent(String.self, forKey: .firstname)

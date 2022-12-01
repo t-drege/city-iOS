@@ -4,13 +4,19 @@
 //
 //  Created by DREGE Thomas on 08/10/2022.
 //
-@testable import city_ios
+
 import XCTest
+import Alamofire
+import Combine
 
+@testable import city_ios
 final class city_iosTests: XCTestCase {
-
+    var vm : TeamViewModel!
+    private var cancellables: Set<AnyCancellable> = []
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let test = DependencyManager()
+        Resolver.register(RegisterRepositoryMocked() as playerListRepositoryProtocol)
     }
 
     override func tearDownWithError() throws {
@@ -18,14 +24,26 @@ final class city_iosTests: XCTestCase {
     }
 
     func testExample() throws {
-        //RegisterViewModel()
+        vm = TeamViewModel()
+        let expectation = XCTestExpectation(description: "State is set to populated")
+        vm.getAllPlayerListAction()
+        vm.$playerListResponse.sink{
+           
+                XCTAssertTrue($0.isEmpty == false)
+                expectation.fulfill()
+            
+        }.store(in: &cancellables)
+        
+       
+        wait(for: [expectation], timeout: 1)
+       
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+//    func testPerformanceExample() throws {
+//        // This is an example of a performance test case.
+//        measure {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
 
 }

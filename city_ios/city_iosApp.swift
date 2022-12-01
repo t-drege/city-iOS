@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct city_iosApp: App {
-    private let manager = DependencyManager()
+    let manager: () = DependencyManager().injectDependencies()
     
     var body: some Scene {
         WindowGroup {

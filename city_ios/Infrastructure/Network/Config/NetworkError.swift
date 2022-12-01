@@ -15,14 +15,14 @@ enum NetworkError: Error {
     }
     
     case network
-        case custom(Int, String, String)
+    case custom(Int, String, String)
         
-        var message: String {
-            switch self {
-            case .network:
-                return "Network Error"
-            case .custom(let code, let message, let technicalMessage):
-                return "Custom error info are: \(code) -- \(message) -- \(technicalMessage)"
-            }
+    var message: String {
+        switch self {
+        case .network:
+            return "Network Error"
+        case .custom(let code, let message, let technicalMessage):
+            return "Custom error info are: \(code) -- \(message) -- \(technicalMessage)"
         }
+    }
 }

@@ -11,7 +11,12 @@ struct PlayerListView: View {
     @ObservedObject var teamViewModel: TeamViewModel
     
     var body: some View {
-       playerListBuilder()
+            HStack {
+                CCircleImage(url: "https://swiftanytime-content.s3.ap-south-1.amazonaws.com/SwiftUI-Beginner/Async-Image/TestImage.jpeg")
+                    .frame(width: 120)
+                Text("sdf")
+            }
+            .background(Colors.greyLightgray)
     }
     
     //UIDevice.current.userInterfaceIdiom == .phone
