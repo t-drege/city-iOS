@@ -12,15 +12,18 @@ struct CCircleImage: View {
     
     var url: String? = "https://swiftanytime-content.s3.ap-south-1.amazonaws.com/SwiftUI-Beginner/Async-Image/TestImage.jpeg"
     var radius: CGFloat = 0
-    
+    var colorCircle: Color = Colors.main
+    var overImage: Image = Image(systemSymbol: .person)
     var body: some View {
-        if let url = url {
-            AsyncImage(url: URL(string: url)) { phase in
-//                if let image = phase.image {
-//                    getImageServer(image: image)
-//                } else {
+        VStack {
+            if let url = url {
+                AsyncImage(url: URL(string: url)) { phase in
+//                    if let image = phase.image {
+//                        getImageServer(image: image)
+//                    } else {
                     getImagePlaceholder()
-                //}
+//                    }
+                }
             }
         }
     }
@@ -37,18 +40,16 @@ struct CCircleImage: View {
     @ViewBuilder func getImagePlaceholder() -> some View {
         GeometryReader { geo in
             Circle()
-                .strokeBorder(Colors.main, lineWidth: geo.size.width / 30)
+                .strokeBorder(colorCircle, lineWidth: geo.size.width / 30)
                 .background(Circle().foregroundColor(Colors.greyLightgray))
                 .overlay(
-                    Image(systemSymbol: .person)
+                    overImage
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(.gray)
                         .shadow(radius: radius)
-                        .frame(width: geo.size.width / 1.6, height: geo.size.height)
-                        .padding(EdgeInsets(top: .zero, leading: .zero, bottom: geo.size.width / 8, trailing: .zero))
-                    
-                )
+                        .frame(width: geo.size.width / 1.6, height: geo.size.height / 3.2)
+                ).frame(width: geo.size.width, height: geo.size.height / 2)
         }
     }
     

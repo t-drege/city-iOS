@@ -12,11 +12,11 @@ struct PlayerListView: View {
     
     var body: some View {
             HStack {
-                CCircleImage(url: "https://swiftanytime-content.s3.ap-south-1.amazonaws.com/SwiftUI-Beginner/Async-Image/TestImage.jpeg")
-                    .frame(width: 120)
+                CCircleImage(url: "https://swiftanytime-content.s3.ap-south-1.amazonaws.com/SwiftUI-Beginner/Async-Image/TestImage.jpeg").frame(width: 60)
                 Text("sdf")
             }
             .background(Colors.greyLightgray)
+            .frame(width: .infinity)
     }
     
     //UIDevice.current.userInterfaceIdiom == .phone
