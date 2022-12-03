@@ -14,7 +14,8 @@ import SwiftUI
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Images {
-  internal static let login = Image("login")
+  internal static let image = Image("Image")
+  internal static let sword = Image("sword")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

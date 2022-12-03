@@ -11,13 +11,11 @@ struct PlayerListView: View {
     @ObservedObject var teamViewModel: TeamViewModel
     
     var body: some View {
-            HStack {
-                CCircleImage(url: "https://swiftanytime-content.s3.ap-south-1.amazonaws.com/SwiftUI-Beginner/Async-Image/TestImage.jpeg")
-                    
-                Text("sdf")
-            }.padding(5)
-            .frame(width: .infinity, height: 50)
-            .background(Colors.greyLightgray)
+        VStack {
+            ForEach(1..<3) { index in
+                CCellPlayer().frame(height: 50).listRowSeparatorTint(.blue)
+            }
+        }
     }
     
     //UIDevice.current.userInterfaceIdiom == .phone
@@ -32,6 +30,6 @@ struct PlayerListView: View {
 
 struct PlayerListView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerListView(teamViewModel: TeamViewModel()).previewDevice("iPad Pro")
+        PlayerListView(teamViewModel: TeamViewModel())
     }
 }

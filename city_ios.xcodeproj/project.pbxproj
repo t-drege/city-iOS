@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C72411311CB7E9641E390DF /* Pods_city_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848B1E9A011D3D8C643A6D3F /* Pods_city_iosTests.framework */; };
+		754D0661293BED5000242DC3 /* CCellPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D0660293BED5000242DC3 /* CCellPlayer.swift */; };
+		754D0663293BEF2400242DC3 /* CLabelIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D0662293BEF2400242DC3 /* CLabelIcon.swift */; };
 		AD7F62784EAFEAC2BCC6DFDD /* Pods_city_ios_city_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF309027685A1F8DAFF39B29 /* Pods_city_ios_city_iosUITests.framework */; };
 		BD08841B28FFFCFE00FB6D74 /* CTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD08841A28FFFCFE00FB6D74 /* CTextField.swift */; };
 		BD088420290000D900FB6D74 /* Localized+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD08841F290000D900FB6D74 /* Localized+Generated.swift */; };
@@ -65,7 +67,7 @@
 		BDD245BB28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245BA28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift */; };
 		BDD245BE28F6E99200C4DDD1 /* UpdateTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD245BD28F6E99200C4DDD1 /* UpdateTokenRepository.swift */; };
 		BDD900A728F3655E0077E971 /* Pods_city_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD900A628F3655E0077E971 /* Pods_city_ios.framework */; };
-		BDDED90B29379D0C00EE81DF /* CCircleImagePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDED90A29379D0C00EE81DF /* CCircleImagePlayer.swift */; };
+		BDDED90B29379D0C00EE81DF /* CCircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDED90A29379D0C00EE81DF /* CCircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		0385D1C24C1EA6BC2D5D746E /* Pods_city_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_city_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EB0270A77CA0E3511CADC3 /* Pods-city_ios-city_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-city_ios-city_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-city_ios-city_iosUITests/Pods-city_ios-city_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		482A83FEAEA0EFADC9C6B355 /* Pods-city_ios-city_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-city_ios-city_iosUITests.release.xcconfig"; path = "Target Support Files/Pods-city_ios-city_iosUITests/Pods-city_ios-city_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		754D0660293BED5000242DC3 /* CCellPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCellPlayer.swift; sourceTree = "<group>"; };
+		754D0662293BEF2400242DC3 /* CLabelIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLabelIcon.swift; sourceTree = "<group>"; };
 		848B1E9A011D3D8C643A6D3F /* Pods_city_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_city_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83275A5BC81C07873D0FB16 /* Pods-city_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-city_ios.debug.xcconfig"; path = "Target Support Files/Pods-city_ios/Pods-city_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		BD08841A28FFFCFE00FB6D74 /* CTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTextField.swift; sourceTree = "<group>"; };
@@ -152,7 +156,7 @@
 		BDD245BA28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenUseCaseProtocol.swift; sourceTree = "<group>"; };
 		BDD245BD28F6E99200C4DDD1 /* UpdateTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenRepository.swift; sourceTree = "<group>"; };
 		BDD900A628F3655E0077E971 /* Pods_city_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_city_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDDED90A29379D0C00EE81DF /* CCircleImagePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCircleImagePlayer.swift; sourceTree = "<group>"; };
+		BDDED90A29379D0C00EE81DF /* CCircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCircleImage.swift; sourceTree = "<group>"; };
 		BDF6F88B28F3645F00550DB9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFEF54B28F364CE00FAE20C /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A828E994BA788122EC7D9B /* Pods-city_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-city_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-city_iosTests/Pods-city_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +223,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		754D065F293BED2300242DC3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				754D0660293BED5000242DC3 /* CCellPlayer.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		754D0664293BEF3A00242DC3 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				754D0662293BEF2400242DC3 /* CLabelIcon.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
 		BD084EA3292FB8D100D735B6 /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +260,8 @@
 		BD08841928FFFCD100FB6D74 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				754D0664293BEF3A00242DC3 /* Label */,
+				754D065F293BED2300242DC3 /* Cell */,
 				BDDED90C29379D1200EE81DF /* Image */,
 				BD2A3EDB2930F9F000B7EA24 /* Button */,
 				BD084EA4292FB8DB00D735B6 /* TextField */,
@@ -683,7 +705,7 @@
 		BDDED90C29379D1200EE81DF /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				BDDED90A29379D0C00EE81DF /* CCircleImagePlayer.swift */,
+				BDDED90A29379D0C00EE81DF /* CCircleImage.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -955,6 +977,7 @@
 				BD3C169028F6F9650032CE1F /* MainView.swift in Sources */,
 				BDD245A928F6E1C800C4DDD1 /* TokenRepository.swift in Sources */,
 				BD2DD77D28F443310055EB5A /* NetworkError.swift in Sources */,
+				754D0661293BED5000242DC3 /* CCellPlayer.swift in Sources */,
 				BDD245BB28F6E96D00C4DDD1 /* UpdateTokenUseCaseProtocol.swift in Sources */,
 				BD2A3EF42932255200B7EA24 /* PlayerListResponse.swift in Sources */,
 				BD2A3EE82932228800B7EA24 /* PlayerListView.swift in Sources */,
@@ -969,7 +992,7 @@
 				BD407BBC28F2DD000075C419 /* RegisterView.swift in Sources */,
 				BD407BD128F35DE70075C419 /* RegisterResponse.swift in Sources */,
 				BD2A3ED82930B34300B7EA24 /* CTextFieldEmptyError.swift in Sources */,
-				BDDED90B29379D0C00EE81DF /* CCircleImagePlayer.swift in Sources */,
+				BDDED90B29379D0C00EE81DF /* CCircleImage.swift in Sources */,
 				BD2E978028F3FF3D00EE6E39 /* RegisterRepository.swift in Sources */,
 				BD0884242900012200FB6D74 /* Colors+Generated.swift in Sources */,
 				BD2A3EF22932253F00B7EA24 /* PlayerListRequest.swift in Sources */,
@@ -983,6 +1006,7 @@
 				BD407BC828F2E3DB0075C419 /* RegisterRouter.swift in Sources */,
 				BD2A3EEA293222E800B7EA24 /* PlayerListViewModel.swift in Sources */,
 				BDCCC2B828F21C3900F79D1F /* Persistence.swift in Sources */,
+				754D0663293BEF2400242DC3 /* CLabelIcon.swift in Sources */,
 				BD2A3EE52932220D00B7EA24 /* TeamView.swift in Sources */,
 				BDD245B928F6E94C00C4DDD1 /* UpdateTokenRepositoryProtocol.swift in Sources */,
 				BDD245B528F6E8CE00C4DDD1 /* UpdateTokenUseCase.swift in Sources */,
@@ -1192,7 +1216,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
@@ -1235,7 +1259,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
