@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEFD2E0071F02CE8DDC3109D99729653"
-               BuildableName = "Pods_city_ios_city_iosUITests.framework"
-               BlueprintName = "Pods-city_ios-city_iosUITests"
+               BlueprintIdentifier = "1282B8776A6EFDCCBE1858E8F673D0A4"
+               BuildableName = "SFSafeSymbols.framework"
+               BlueprintName = "SFSafeSymbols"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

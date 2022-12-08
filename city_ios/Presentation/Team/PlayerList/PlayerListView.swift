@@ -11,11 +11,12 @@ struct PlayerListView: View {
     @ObservedObject var teamViewModel: TeamViewModel
     
     var body: some View {
-        VStack {
-            ForEach(1..<3) { index in
-                CCellPlayer().frame(height: 50).listRowSeparatorTint(.blue)
+        VStack(spacing: .zero) {
+                ForEach(1..<3) { index in
+                    CCellPlayer(playerName: "Thomas Drège", totalGoal: 10, valuePlayer: 10, id: 1, lastElementId: 10)
+                }
             }
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
     
     //UIDevice.current.userInterfaceIdiom == .phone

@@ -10,16 +10,34 @@ import UIKit
 
 struct MainView: View {
     
-    //@StateObject var mainViewVM = MainViewModel()
+    @State private var selectedTab = 0
     
     var body: some View {
+        TabView(selection: $selectedTab) {
+            TeamView()
+                .tabItem {
+                    Label("image", systemSymbol: .shieldFill)
+                        .foregroundColor(Colors.main)
+                }
+                .tag(0)
+             
+            
+            
+            TeamView()
+                .tabItem {
+                    Label("image", systemSymbol: .shieldFill)
+                        .foregroundColor(Colors.main)
+                }.tag(1)
+        }
+        .toolbarBackground(Color.white, for: .tabBar)
+        .toolbarBackground(.visible, for: .tabBar)
+        .accentColor(Colors.main)
 //        if(mainViewVM.isLogin == false) {
 //            LoginView()
 //                .environmentObject(mainViewVM)
 //        } else {
 //            RegisterView()
 //        }
-       TeamView()
     }
 }
 

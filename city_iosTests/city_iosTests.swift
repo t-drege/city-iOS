@@ -15,7 +15,6 @@ final class city_iosTests: XCTestCase {
     private var cancellables: Set<AnyCancellable> = []
     
     override func setUpWithError() throws {
-        let test = DependencyManager()
         Resolver.register(RegisterRepositoryMocked() as playerListRepositoryProtocol)
     }
 

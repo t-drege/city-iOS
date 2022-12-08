@@ -19,7 +19,7 @@ struct CLabelIcon: View {
             Text(text).font(.system(size: sizeText))
             Spacer().frame(width: 4)
             image.foregroundColor(colorImage)
-        }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

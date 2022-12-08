@@ -30,7 +30,7 @@ struct CTextField: View {
             }
             getLine()
             DisplayTextErrors()
-        }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     @ViewBuilder func getImage() -> some View {

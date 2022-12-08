@@ -1,0 +1,61 @@
+name: city_ios
+options:
+    bundleIdPrefix: "com.dev-factory"
+    deploymentTarget: 16
+    developmentLanguage: "en"
+    postGenCommand: pod install
+configs:
+    debug: debug
+    preprod: release
+    release: release
+configFiles:
+    debug: configuration/debug.xcconfig
+    release: configuration/release.xcconfig
+targets:
+    city_ios:
+        type: application
+        platform: iOS
+        deploymentTarget: 16.0
+        sources:
+            - city_ios
+        info:
+            path: city_ios/Info.plist
+        entitlements:
+            path: city_ios/city_ios.entitlements
+        settings:
+            base:
+                CURRENT_PROJECT_VERSION: 1
+                MARKETING_VERSION: 0.0.1
+                INFOPLIST_FILE: city_ios/Info.plist
+            debug:
+                DEV_BUILD_SETTINGS: debug
+            configs:
+                debug:
+                    DEV_BUILD_SETTINGS: debug
+                preprod:
+                    PREPROD_BUILD_SETTINGS: preprod
+                release:
+                    RELEASE_BUILD_SETTINGS: release
+        scheme:
+            testTargets:
+            - city_iosTests
+        configFiles:
+            debug: configuration/debug.xcconfig
+            release: configuration/release.xcconfig
+        postBuildScripts:
+            - path: configuration/swiftgen.sh
+              name: SwiftGen
+    city_iosTests:
+        type: bundle.unit-test
+        platform: iOS
+        sources:
+            - path: city_iosTests
+    city_iosUITests:
+        type: bundle.ui-testing
+        platform: iOS
+        sources:
+            - path: city_iosUITests
+        
+            
+
+      

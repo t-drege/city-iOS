@@ -9,7 +9,10 @@ import Foundation
 
 final class DependencyManager {
     
-    func injectDependencies() {
+    init() {
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+            // Code only executes when tests are running
+        }
         addDependencies()
     }
     

@@ -9,9 +9,24 @@ import SwiftUI
 
 struct TeamView: View {
     @StateObject var teamViewModel = TeamViewModel()
-    
+   
     var body: some View {
-       PlayerListView(teamViewModel: teamViewModel)
+        NavigationStack {
+            VStack(spacing:.zero) {
+                PlayerListView(teamViewModel: teamViewModel)
+                    .toolbar {
+                        ToolbarItem(placement: .principal) { // <3>
+                            Text("Player")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                        }
+                    }
+                    .toolbarBackground(Colors.main, for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbarColorScheme(.dark, for: .navigationBar)
+            }
+        }
     }
 }
 
