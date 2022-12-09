@@ -2,4 +2,5 @@ Pods/*
 .DS_Store
 city_ios/.DS_Store
 city_ios.xcodeproj/*
+city_ios.xcworkspace/*
 Podfile.lock
