@@ -1,6 +1,0 @@
-framework module Pods_city_ios_city_iosUITests {
-  umbrella header "Pods-city_ios-city_iosUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
