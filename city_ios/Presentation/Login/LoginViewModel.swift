@@ -10,6 +10,8 @@ import Combine
 
 class LoginViewModel: ObservableObject {
     @Inject var tokenRepository: GetTokensRepositoryProtocol
+    @Inject var tokenSessionRepository: GetTokenRepositoryProtocol
+    @Inject var updateTokenRepository: UpdateTokenSessionRepositoryProtocol
     
     private var cancellableSet: Set<AnyCancellable> = []
     
@@ -19,7 +21,9 @@ class LoginViewModel: ObservableObject {
             .sink(receiveCompletion: { error in
                 print(error)
             }, receiveValue: { response in
-               print(response)
+                self.updateTokenRepository.execute(tokenSession: TokenSession(token: response.token, refreshToken: response.refreshToken))
+                
+                print(self.tokenSessionRepository.getTokenSession())
             }).store(in: &cancellableSet)
             
     }
