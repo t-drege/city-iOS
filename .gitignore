@@ -1,6 +1,5 @@
 Pods/*
-Pods/
 .DS_Store
 city_ios/.DS_Store
-city_ios.xcodeproj/project.pbxproj
+city_ios.xcodeproj/*
 Podfile.lock
