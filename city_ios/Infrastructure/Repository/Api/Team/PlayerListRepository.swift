@@ -11,7 +11,7 @@ import Alamofire
 
 struct PlayerListRepository: playerListRepositoryProtocol {
     func getAllPlayers() -> AnyPublisher<[PlayerListResponse], NetworkError> {
-        return AF.request("http://127.0.0.1:8000/api/players", method: .get)
+        return Api.session.request("http://localhost:8000/api/players", method: .get)
             .validate()
             .publishDecodable(type: [PlayerListResponse].self)
             .value()

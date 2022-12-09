@@ -7,6 +7,7 @@ target 'city_ios' do
   # Pods for city_ios
   pod 'Alamofire', '5.6.2'
   pod 'SFSafeSymbols', '~> 4.0.0'
+  pod 'RealmSwift', '~>10'
   
   target 'city_iosTests' do
     inherit! :search_paths

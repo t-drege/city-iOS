@@ -11,28 +11,17 @@ struct LoginView: View {
     
     @EnvironmentObject var mainViewModel: MainViewModel
      
-    @State var login : String
-    @State var password: String
+    @StateObject var loginViewModel: LoginViewModel = LoginViewModel()
+    
+    @State var login : String = ""
+    @State var password: String = ""
     
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                loginDraw()
-                    .foregroundColor(Colors.main)
-                HStack {
-                    Text("CITY")
-                        .foregroundColor(.white)
-                }.font(Font.custom("ClearSans-Bold", size: 60))
-                    .position(x: geo.size.width / 2 ,y:100)
-                
-                VStack(spacing: 10){
-                    CTextField(bindingText: $login, placeholder: "email")
-                    CTextField(bindingText: $password, placeholder: "password")
-                }.padding(20)
-                .background(Color.white)
-                .frame(width: geo.size.width - 60)
-            }.edgesIgnoringSafeArea(.all)
-        }
+        Text("LOGIN")
+            .onAppear {
+                loginViewModel.loginAction(email: "thomasdrege1@gmail.com", password: "totomax")
+            }
+        
     }
     
     @ViewBuilder func drawingBackground() -> some View {
@@ -56,6 +45,6 @@ struct loginDraw: Shape {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(login: "sdf", password: "sdf")
+        LoginView()
     }
 }

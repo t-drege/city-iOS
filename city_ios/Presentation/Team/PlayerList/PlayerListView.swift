@@ -6,17 +6,33 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct PlayerListView: View {
     @ObservedObject var teamViewModel: TeamViewModel
     
     var body: some View {
         VStack(spacing: .zero) {
-                ForEach(1..<3) { index in
+            ForEach(teamViewModel.playerListResponse) { index in
                     CCellPlayer(playerName: "Thomas Drège", totalGoal: 10, valuePlayer: 10, id: 1, lastElementId: 10)
                 }
             }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .onAppear {
+            teamViewModel.getAllPlayerListAction()
+            print(teamViewModel.playerListResponse.count)
+//            let player = Player(firstname: "Drège", lastname: "Thomas")
+//
+//            let config = Realm.Configuration(
+//                schemaVersion: 1)
+//
+//            let realm  = try! Realm(configuration: config)
+//            try! realm.write {
+//
+//                realm.add(player)
+//            }
+//            print(realm.objects(Player.self))
+        }
     }
     
     //UIDevice.current.userInterfaceIdiom == .phone

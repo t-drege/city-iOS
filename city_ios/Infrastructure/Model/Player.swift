@@ -6,13 +6,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Player: Identifiable, Codable {
-    let id : Int
-    let firstname: String
-    let lastname: String
-    let email: String
-    let password: String
+final class Player: Object, Identifiable, Codable {
+    @Persisted(primaryKey: true) var id : Int
+    @Persisted var firstname: String
+    @Persisted var lastname: String
+    @Persisted var email: String
+    @Persisted var password: String
+    
+    convenience init(firstname: String, lastname: String) {
+          self.init()
+          self.firstname = firstname
+          self.lastname = lastname
+    }
     
     private enum CodingKeys: String, CodingKey {
        case id = "id"

@@ -23,5 +23,4 @@ struct RegisterResponse: Decodable {
         firstname = player.firstname
     }
     
-
 }

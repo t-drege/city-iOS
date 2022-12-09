@@ -13,7 +13,7 @@ struct city_iosApp: App {
     
     var body: some Scene {
         WindowGroup {
-           MainView()
+           LoginView()
         }
     }
 }

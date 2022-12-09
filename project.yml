@@ -20,6 +20,9 @@ targets:
             - city_ios
         info:
             path: city_ios/Info.plist
+            properties:
+                UILaunchStoryboardName: LaunchScreen
+                BASE_URL: $(BASE_URL)
         entitlements:
             path: city_ios/city_ios.entitlements
         settings:
