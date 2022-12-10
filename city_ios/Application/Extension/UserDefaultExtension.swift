@@ -8,12 +8,13 @@
 import Foundation
 
 extension UserDefaults {
-//    @objc var session: Any {
-//            get {
-//                return object(forKey: .session)
-//            }
-//            set {
-//                set(newValue, forKey: "music_volume")
-//            }
-//        }
+    // Use on change token session
+    @objc var tokens: TokenSession {
+            get {
+                return try! JSONDecoder().decode(TokenSession.self, from: object(forKey: TokenKey.tokens.rawValue) as! Data)
+            }
+            set {
+                set(try? JSONEncoder().encode(newValue), forKey: TokenKey.tokens.rawValue)
+            }
+        }
 }

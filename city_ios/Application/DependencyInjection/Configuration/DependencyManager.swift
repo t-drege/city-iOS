@@ -21,7 +21,6 @@ final class DependencyManager {
         Resolver.register(PlayerListRepository() as playerListRepositoryProtocol)
         Resolver.register(GetTokensRepository() as GetTokensRepositoryProtocol)
         Resolver.register(UpdateTokenSessionRepository() as UpdateTokenSessionRepositoryProtocol)
-        Resolver.register(GetTokenRepository() as GetTokenRepositoryProtocol)
     }
     
 }

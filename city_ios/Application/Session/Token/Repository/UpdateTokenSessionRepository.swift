@@ -9,7 +9,7 @@ import Foundation
 
 struct UpdateTokenSessionRepository: UpdateTokenSessionRepositoryProtocol {
     func execute(tokenSession: TokenSession) {
-        UserDefaults.standard.set(try? JSONEncoder().encode(tokenSession), forKey: TokenKey.session.rawValue)
+        UserDefaults.standard.tokens = tokenSession
         UserDefaults.standard.synchronize()
     }
     

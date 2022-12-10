@@ -8,5 +8,5 @@
 import Foundation
 
 enum TokenKey: String {
-    case session
+    case tokens = "tokens"
 }

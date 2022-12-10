@@ -15,7 +15,7 @@ class Api {
         let configuration = URLSessionConfiguration.af.default
         configuration.timeoutIntervalForRequest = 30
         configuration.waitsForConnectivity = true
-        let interceptor =  ApiInterceptor()
+        let interceptor = ApiInterceptor()
         return Session(
             configuration: configuration,
             interceptor: interceptor
