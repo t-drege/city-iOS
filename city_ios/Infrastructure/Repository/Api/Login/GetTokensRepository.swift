@@ -12,7 +12,6 @@ import Alamofire
 struct GetTokensRepository: GetTokensRepositoryProtocol {
     func getAllTokens(request: GetTokensRequest) -> AnyPublisher<GetTokensResponse, NetworkError> {
         Api.session.request(LoginRouter.tokenRequest(body: request))
-            .validate()
             .publishDecodable(type: GetTokensResponse.self)
             .value()
             .mapError { error in

@@ -17,9 +17,9 @@ final class TokenSession: NSObject, NSCoding, Codable {
         self.refreshToken = refreshToken
     }
     
-    required init(coder aDecoder: NSCoder) {
-        token = aDecoder.decodeObject(forKey: "token") as? String ?? ""
-        refreshToken = aDecoder.decodeObject(forKey: "refreshToken") as? String ?? ""
+    required init(coder decoder: NSCoder) {
+        token = decoder.decodeObject(forKey: "token") as? String ?? ""
+        refreshToken = decoder.decodeObject(forKey: "refreshToken") as? String ?? ""
     }
     
     func encode(with coder: NSCoder) {

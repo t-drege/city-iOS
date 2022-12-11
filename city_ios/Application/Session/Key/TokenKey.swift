@@ -9,4 +9,12 @@ import Foundation
 
 enum TokenKey: String {
     case tokens = "tokens"
+    
+    var key: String {
+        switch self {
+        case .tokens:
+            return "tokens"
+        }
+    }
+    
 }

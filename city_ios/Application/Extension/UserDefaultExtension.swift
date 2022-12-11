@@ -9,9 +9,9 @@ import Foundation
 
 extension UserDefaults {
     // Use on change token session
-    @objc var tokens: TokenSession {
+    @objc var tokens: TokenSession? {
             get {
-                return try! JSONDecoder().decode(TokenSession.self, from: object(forKey: TokenKey.tokens.rawValue) as! Data)
+                return try? JSONDecoder().decode(TokenSession.self, from: object(forKey: TokenKey.tokens.key) as! Data)
             }
             set {
                 set(try? JSONEncoder().encode(newValue), forKey: TokenKey.tokens.rawValue)

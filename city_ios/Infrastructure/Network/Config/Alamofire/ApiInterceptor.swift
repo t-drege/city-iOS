@@ -10,15 +10,13 @@ import Alamofire
 
 class ApiInterceptor: RequestInterceptor {
     
-    @Inject var repositoryTokenSession: GetTokenRepositoryProtocol
-    
-    let retryLimit = 2
+    let retryLimit = 3
     let retryDelay: TimeInterval = 15
     var isRetrying = false
 
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
-        urlRequest.headers.add(.authorization(bearerToken: UserDefaults.standard.tokens.token))
+        urlRequest.headers.add(.authorization(bearerToken: UserDefaults.standard.tokens?.token ?? ""))
         completion(.success(urlRequest))
     }
     
