@@ -10,10 +10,9 @@ import Foundation
 final class DependencyManager {
     
     init() {
-        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
-            print("sdf")
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil {
+            addDependencies()
         }
-        addDependencies()
     }
     
     private func addDependencies() {

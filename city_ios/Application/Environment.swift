@@ -7,4 +7,8 @@
 
 import Foundation
 
-let baseUrl = Api.infoDictionary["BASE_URL"] as? String ?? ""
+struct Environment {
+    static let infoDictionary: [String: Any] = Bundle.main.infoDictionary ?? ["nil": ""]
+    static let baseUrl = infoDictionary["BASE_URL"] as? String ?? ""
+}
+

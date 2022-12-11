@@ -27,7 +27,7 @@ enum LoginRouter: Router {
     
     func asURLRequest() throws -> URLRequest {
         
-        let url = try baseUrl.asURL().appendingPathComponent(path)
+        let url = try Environment.baseUrl.asURL().appendingPathComponent(path)
         var request = URLRequest(url: url)
         request.method = method
         
