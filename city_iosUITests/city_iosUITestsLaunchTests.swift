@@ -7,6 +7,7 @@
 
 import XCTest
 
+@testable import city_ios
 final class city_iosUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {

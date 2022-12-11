@@ -7,7 +7,4 @@
 
 import Foundation
 
-@testable import city_ios
-extension DependencyManager {
-   
-}
+

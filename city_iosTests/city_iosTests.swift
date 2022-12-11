@@ -11,11 +11,11 @@ import Combine
 
 @testable import city_ios
 final class city_iosTests: XCTestCase {
-    var vm : TeamViewModel!
-    private var cancellables: Set<AnyCancellable> = []
+    //var vm : TeamViewModel!
+    //private var cancellables: Set<AnyCancellable> = []
     
     override func setUpWithError() throws {
-        Resolver.register(RegisterRepositoryMocked() as playerListRepositoryProtocol)
+       // Resolver.register(RegisterRepositoryMocked() as playerListRepositoryProtocol)
     }
 
     override func tearDownWithError() throws {
@@ -23,18 +23,18 @@ final class city_iosTests: XCTestCase {
     }
 
     func testExample() throws {
-        vm = TeamViewModel()
-        let expectation = XCTestExpectation(description: "State is set to populated")
-        vm.getAllPlayerListAction()
-        vm.$playerListResponse.sink{
-           
-                XCTAssertTrue($0.isEmpty == false)
-                expectation.fulfill()
-            
-        }.store(in: &cancellables)
-        
-       
-        wait(for: [expectation], timeout: 1)
+//        vm = TeamViewModel()
+//        let expectation = XCTestExpectation(description: "State is set to populated")
+//        vm.getAllPlayerListAction()
+//        vm.$playerListResponse.sink{
+//
+//                XCTAssertTrue($0.isEmpty == false)
+//                expectation.fulfill()
+//
+//        }.store(in: &cancellables)
+//
+//
+//        wait(for: [expectation], timeout: 1)
        
     }
 

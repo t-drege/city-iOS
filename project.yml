@@ -53,6 +53,13 @@ targets:
         platform: iOS
         sources:
             - path: city_iosTests
+        dependencies:
+            - target: city_ios
+        info:
+            path: city_iosTests/Info.plist
+            properties:
+                UILaunchStoryboardName: LaunchScreen
+                BASE_URL: $(BASE_URL)
     city_iosUITests:
         type: bundle.ui-testing
         platform: iOS
