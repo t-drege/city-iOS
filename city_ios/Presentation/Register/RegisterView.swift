@@ -21,10 +21,9 @@ struct RegisterView: View {
                 VStack {
                     CTextField(
                         bindingText: $firstname,
-                        validators: {[
-                            CTextFieldEmptyError.execute(text: $firstname),
-                            CTextFieldEmptyError.execute(text: $firstname)
-                        ]},
+                        validators: [
+                            CErrorTextField(.isEmpty(text: $firstname))
+                        ],
                         placeholder: Localized.Register.Form.firstname,
                         image: Image(systemSymbol: .personFill)
                     )

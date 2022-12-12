@@ -12,9 +12,9 @@ struct CTextField: View {
     
     @State var isSelected: Bool = false
     @State var color: Color = Colors.greyLightgray
-    @State var validators: () -> [(Bool, String?)] = {[]}
+    @State var validators: [CErrorTextField]? = nil
     @State var isCommit: Bool = false
-    
+
     let placeholder: String
     let type: UIKeyboardType = .default
     
@@ -56,16 +56,18 @@ struct CTextField: View {
     
     @ViewBuilder func DisplayTextErrors() -> some View {
         ForEach(getTextErrors()) { errorText in
-            Text(errorText.text).foregroundColor(.red)
+            if let message = errorText.error.message {
+                Text(message).foregroundColor(.red)
+            }
         }
     }
     
-    func getTextErrors() -> [ErrorText] {
-        var textErrors: [ErrorText] = []
+    func getTextErrors() -> [CErrorTextField] {
+        var textErrors: [CErrorTextField] = []
         if isCommit {
-            validators().forEach { validator in
-                if validator.0 == false, let textError = validator.1 {
-                    textErrors.append(ErrorText(text: textError))
+            validators?.forEach { validator in
+                if validator.error.message != nil {
+                    textErrors.append(validator)
                 }
             }
         }
@@ -85,8 +87,8 @@ struct CTextField: View {
     }
     
     func isValidated()  {
-        validators().forEach { validator in
-            if validator.0 == false {
+        validators?.forEach { validator in
+            if validator.error.message != nil {
                 isCommit = true
                 color = Color.red
             }
@@ -97,6 +99,6 @@ struct CTextField: View {
 
 struct CTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CTextField(bindingText: Binding<String>.constant("") ,isSelected: false, validators: {[]}, placeholder: "Text", image: Image(systemSymbol: .personFill))
+        CTextField(bindingText: Binding<String>.constant("") ,isSelected: false, validators: [CErrorTextField(.isEmpty(text:  Binding.constant("Thomas")))], placeholder: "Text", image: Image(systemSymbol: .personFill))
     }
 }
