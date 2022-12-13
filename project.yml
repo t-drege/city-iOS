@@ -1,4 +1,4 @@
-name: city_ios
+name: city
 options:
     bundleIdPrefix: "com.dev-factory"
     deploymentTarget: 16
@@ -12,24 +12,24 @@ configFiles:
     debug: configuration/debug.xcconfig
     release: configuration/release.xcconfig
 targets:
-    city_ios:
+    city:
         type: application
         platform: iOS
         deploymentTarget: 16.0
         sources:
-            - city_ios
+            - city
         info:
-            path: city_ios/Info.plist
+            path: city/Info.plist
             properties:
                 UILaunchStoryboardName: LaunchScreen
                 BASE_URL: $(BASE_URL)
         entitlements:
-            path: city_ios/city_ios.entitlements
+            path: city/city.entitlements
         settings:
             base:
                 CURRENT_PROJECT_VERSION: 1
                 MARKETING_VERSION: 0.0.1
-                INFOPLIST_FILE: city_ios/Info.plist
+                INFOPLIST_FILE: city/Info.plist
             debug:
                 DEV_BUILD_SETTINGS: debug
             configs:
@@ -41,30 +41,30 @@ targets:
                     RELEASE_BUILD_SETTINGS: release
         scheme:
             testTargets:
-            - city_iosTests
+            - cityTests
         configFiles:
             debug: configuration/debug.xcconfig
             release: configuration/release.xcconfig
         postBuildScripts:
             - path: configuration/swiftgen.sh
               name: SwiftGen
-    city_iosTests:
+    cityTests:
         type: bundle.unit-test
         platform: iOS
         sources:
-            - path: city_iosTests
+            - path: cityTests
         dependencies:
-            - target: city_ios
+            - target: city
         info:
-            path: city_iosTests/Info.plist
+            path: cityTests/Info.plist
             properties:
                 UILaunchStoryboardName: LaunchScreen
                 BASE_URL: $(BASE_URL)
-    city_iosUITests:
+    cityUITests:
         type: bundle.ui-testing
         platform: iOS
         sources:
-            - path: city_iosUITests
+            - path: cityUITests
         
             
 

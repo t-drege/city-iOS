@@ -1,2 +1,2 @@
-#include "Pods/Target Support Files/Pods-city_ios/Pods-city_ios.release.xcconfig"
+#include "Pods/Target Support Files/Pods-city/Pods-city.release.xcconfig"
 
